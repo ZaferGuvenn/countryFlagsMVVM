@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="country"
+            type="com.mvvm.countryflag.model.Country" />
+
+        <variable
+            name="listener"
+            type="com.mvvm.countryflag.adapter.CountryClickListener" />
+
+    </data>
+
+<androidx.appcompat.widget.LinearLayoutCompat
+    android:id="@+id/RowLinearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="3dp"
+    >
+
+    <ImageView
+        android:id="@+id/RowImageView"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:layout_margin="2dp"
+        android:downloadUrl="@{country.flag}"
+        android:layout_weight="1"
+        android:background="#8B4D97"
+        />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/RowLinearLayoutForTexts"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:background="#80C78AE8"
+        >
+
+        <TextView
+            android:id="@+id/RowCountryNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{country.name}"
+            android:layout_gravity="center"
+            android:textSize="20sp"
+            android:layout_marginBottom="2dp"
+            >
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/RowCountryRegionTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{country.region}"
+            android:textSize="18sp"
+            >
+
+        </TextView>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
+
+
+</layout>

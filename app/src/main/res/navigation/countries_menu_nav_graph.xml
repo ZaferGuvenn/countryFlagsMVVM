@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/countries_menu_nav_graph"
+    app:startDestination="@id/countriesMenuFragment">
+
+    <fragment
+        android:id="@+id/countriesMenuFragment"
+        android:name="com.mvvm.countryflag.view.CountriesMenuFragment"
+        android:label="CountriesMenuFragment" >
+        <action
+            android:id="@+id/action_countriesMenuFragment_to_showSelectedCountryFragment"
+            app:destination="@id/showSelectedCountryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/showSelectedCountryFragment"
+        android:name="com.mvvm.countryflag.view.ShowSelectedCountryFragment"
+        android:label="ShowSelectedCountryFragment" >
+        <argument
+            android:name="uuid"
+            app:argType="long"
+            android:defaultValue="0L" />
+        <action
+            android:id="@+id/action_showSelectedCountryFragment_to_countriesMenuFragment"
+            app:destination="@id/countriesMenuFragment" />
+    </fragment>
+</navigation>
